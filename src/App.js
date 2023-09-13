@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { CssBaseline } from "@mui/material";
+import Providers from "./contexts/Providers";
+import Topbar from "./components/Topbar";
+import { useState } from "react";
+import SideNav from "./components/sideNav/SideNav";
 
 function App() {
+
+  const [isSideBar, setIsSidebar] = useState(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Providers>
+      <CssBaseline/>
+      <div className="app">
+        <SideNav />
+       <main className="content">
+        <Topbar />
+       </main>
+      </div>
+    </Providers>
   );
 }
 
