@@ -1,31 +1,14 @@
-import { Box, Button, IconButton, Typography, useTheme } from '@mui/material';
+import { Box, useTheme } from '@mui/material';
 import React, { useState } from 'react';
 import { tokens } from '../../contexts/theme';
 import {
   Sidebar,
-  Menu,
-  MenuItem,
+  Menu
 } from 'react-pro-sidebar';
-
-import { Link, useLocation } from 'react-router-dom';
 import Logo from './Logo';
 import { sideNavBottomMeta, sideNavMeta } from '../../configs/meta/sideNavMeta';
 import SideBarToggler from './SideBarToggler';
-
-
-
-const Item = ({ title, to, icon }) => {
-  const location = useLocation();
-  return (
-    <MenuItem
-      active={location.pathname === to ? true : false}
-      icon={icon}
-      component={<Link to={to} />}
-    >
-      <Typography fontWeight={600}>{title}</Typography>
-    </MenuItem>
-  );
-};
+import Item from './Item';
 
 const SideNav = () => {
 
@@ -78,11 +61,15 @@ const SideNav = () => {
               marginRight: sidebarCollapesed ? 'auto' : '4px'
             }
           }}>
+
           {/* LOGO */}
           <Logo sidebarCollapesed={sidebarCollapesed} />
 
           {/* MENU ITEMS */}
-          <Box margin={'10px'} marginTop={'10vh'}>
+          <Box
+            margin={'10px'}
+            marginTop={'10vh'}
+          >
             {sideNavMeta(colors).map((item, index) =>
               <Item
                 key={index + 1}
@@ -117,7 +104,11 @@ const SideNav = () => {
           </Box>
 
           {/* SIDEBAR COLLAPSE */}
-          <SideBarToggler colors={colors} sidebarCollapesed={sidebarCollapesed} setSidebarCollapsed={setSidebarCollapsed} />
+          <SideBarToggler
+            colors={colors}
+            sidebarCollapesed={sidebarCollapesed}
+            setSidebarCollapsed={setSidebarCollapsed}
+          />
         </Menu>
       </Sidebar>
     </Box>
