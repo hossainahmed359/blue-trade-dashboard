@@ -124,7 +124,6 @@ const ColorModeProvider = ({ children }) => {
 
 // USE COLOR MODE CONTEXT HOOK
 const useColorMode = () => {
-
   const context = useContext(ColorModeContext);
   if (!context) {
     throw new Error('useColorMode must be used within a MyContextProvider');
@@ -132,6 +131,7 @@ const useColorMode = () => {
   return context;
 };
 
+// USE COLORS
 const useColors = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
