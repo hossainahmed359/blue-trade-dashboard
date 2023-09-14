@@ -1,7 +1,8 @@
 import { Box, Grid } from '@mui/material'
 import React from 'react'
 import { useColors } from '../contexts/theme'
-import StatBox from '../components/StatBox';
+import StatBox from '../components/statsBox/StatBox';
+import { statBoxMeta } from '../configs/meta/statBoxMeta';
 
 const Home = () => {
 
@@ -11,27 +12,12 @@ const Home = () => {
   return (
     <Box >
       <Grid container spacing={2}>
-        <Grid item xs={3} >
-          <Box sx={{ backgroundColor: colors.elementBg, borderRadius: '12px', padding: '20px' }}>
-            <StatBox />
-          </Box>
-        </Grid>
-        <Grid item xs={3} >
-          <Box sx={{ backgroundColor: colors.elementBg, borderRadius: '12px', padding: '20px' }}>
-            <StatBox />
-          </Box>
-        </Grid>
-        <Grid item xs={3} >
-          <Box sx={{ backgroundColor: colors.elementBg, borderRadius: '12px', padding: '20px' }}>
-            <StatBox />
-          </Box>
-        </Grid>
-        <Grid item xs={3} >
-          <Box sx={{ backgroundColor: colors.elementBg, borderRadius: '12px', padding: '20px' }}>
-            <StatBox />
-          </Box>
-        </Grid>
-
+        {statBoxMeta(colors).map((item, index) =>
+          <Grid key={`statsbox-${index+1}`} item xs={3} >
+            <Box sx={{ backgroundColor: colors.elementBg, borderRadius: '12px', padding: '20px' }}>
+              <StatBox {...item}/>
+            </Box>
+          </Grid>)}
       </Grid>
     </Box>
 
