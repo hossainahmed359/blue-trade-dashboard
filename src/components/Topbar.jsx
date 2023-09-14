@@ -10,8 +10,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import { DARK_THEME } from '../configs/meta/colorPalette';
 
 const Topbar = () => {
-  const { mode, colors } = useColors();
-  const { toggleColorMode } = useColorMode();
+  const { colors } = useColors();
+  const { mode, colorMode } = useColorMode();
 
   return (
     <Box backgroundColor={colors.elementBg} display={'flex'} justifyContent={'space-between'} p={2}>
@@ -25,7 +25,7 @@ const Topbar = () => {
 
       {/* ICONS */}
       <Box>
-        <IconButton onClick={toggleColorMode}>
+        <IconButton onClick={colorMode.toggleColorMode}>
           {mode === DARK_THEME
             ? <DarkModeOutlinedIcon />
             : <LightModeOutlinedIcon />}

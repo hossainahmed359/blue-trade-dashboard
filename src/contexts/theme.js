@@ -112,9 +112,9 @@ const useMode = () => {
 
 // CONTEXT PROVIDER
 const ColorModeProvider = ({ children }) => {
-  const { theme, colorMode } = useMode();
+  const { mode, theme, colorMode } = useMode();
   return (
-    <ColorModeContext.Provider value={colorMode}>
+    <ColorModeContext.Provider value={{mode,colorMode}}>
       <ThemeProvider theme={theme}>
         {children}
       </ThemeProvider>
@@ -135,9 +135,7 @@ const useColorMode = () => {
 const useColors = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const { mode } = useMode();
-
-  return { mode, colors }
+  return {  colors }
 }
 
 export { ColorModeProvider, useColorMode, tokens, useColors };

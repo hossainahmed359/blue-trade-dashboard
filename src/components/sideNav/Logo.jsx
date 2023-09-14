@@ -3,13 +3,14 @@ import React from 'react'
 import logoLight from '../../assets/images/logo/logo-light.svg'
 import logoDark from '../../assets/images/logo/logo-dark.svg'
 import { Box, Typography } from '@mui/material'
-import { useColors } from '../../contexts/theme'
+import { useColorMode, useColors } from '../../contexts/theme'
 import { DARK_THEME } from '../../configs/meta/colorPalette'
 import { Link } from 'react-router-dom'
 
 const Logo = ({ sidebarCollapesed }) => {
 
-  const { mode, colors } = useColors();
+  const { colors } = useColors();
+  const { mode } = useColorMode();
 
   return (
     <Link style={{ textDecoration: 'none' }} to={'/'}>
@@ -27,7 +28,7 @@ const Logo = ({ sidebarCollapesed }) => {
           justifyContent="center"
           alignItems="center"
         >
-          <img height={30} src={mode === DARK_THEME ? logoDark : logoLight} alt="" />
+          <img height={30} src={mode === DARK_THEME ? logoDark : logoLight} alt="Logo" />
         </Box>
         {
           !sidebarCollapesed &&
