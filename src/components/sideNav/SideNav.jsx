@@ -63,10 +63,10 @@ const SideNav = () => {
                   color: colors.blueAccent[500],
                 },
 
+                margin: sidebarCollapesed ? '2vh auto' : '2vh 1vw',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                margin: sidebarCollapesed ? '2vh auto' : '2vh 1vw',
               }
             },
 
@@ -74,7 +74,8 @@ const SideNav = () => {
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              margin: 'auto'
+              margin: 'auto',
+              marginRight: sidebarCollapesed ? 'auto' : '4px'
             }
           }}>
           {/* LOGO */}
