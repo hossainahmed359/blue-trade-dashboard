@@ -2,15 +2,14 @@ import React from 'react'
 
 import logoLight from '../../assets/images/logo/logo-light.svg'
 import logoDark from '../../assets/images/logo/logo-dark.svg'
-import { Box, Typography, useTheme } from '@mui/material'
-import { tokens } from '../../contexts/theme'
+import { Box, Typography } from '@mui/material'
+import { useColors } from '../../contexts/theme'
 import { DARK_THEME } from '../../configs/meta/colorPalette'
 import { Link } from 'react-router-dom'
 
 const Logo = ({ sidebarCollapesed }) => {
 
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
+  const { mode, colors } = useColors();
 
   return (
     <Link style={{ textDecoration: 'none' }} to={'/'}>
@@ -28,7 +27,7 @@ const Logo = ({ sidebarCollapesed }) => {
           justifyContent="center"
           alignItems="center"
         >
-          <img height={ 30} src={theme.palette.mode === DARK_THEME ? logoDark : logoLight} alt="" />
+          <img height={30} src={mode === DARK_THEME ? logoDark : logoLight} alt="" />
         </Box>
         {
           !sidebarCollapesed &&

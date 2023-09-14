@@ -2,7 +2,7 @@ import React from 'react';
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 import { Box } from '@mui/material';
 
-const SideBarToggler = ({ colors, sidebarCollapesed, setSidebarCollapsed }) => {
+const SideBarToggler = ({ colors, setSidebarCollapsed }) => {
   return (
     <Box
       sx={{

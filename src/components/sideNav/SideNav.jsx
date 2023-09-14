@@ -1,6 +1,6 @@
-import { Box, useTheme } from '@mui/material';
+import { Box } from '@mui/material';
 import React, { useState } from 'react';
-import { tokens } from '../../contexts/theme';
+import { useColors } from '../../contexts/theme';
 import {
   Sidebar,
   Menu
@@ -12,8 +12,7 @@ import Item from './Item';
 
 const SideNav = () => {
 
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
+  const { colors } = useColors();
   const [sidebarCollapesed, setSidebarCollapsed] = useState(false);
 
   return (

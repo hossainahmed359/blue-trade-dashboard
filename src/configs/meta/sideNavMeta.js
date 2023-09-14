@@ -17,17 +17,17 @@ export const sideNavMeta = (colors) => {
         {
             title: 'Markets',
             icon: <CandlestickChartIcon />,
-            link: '/12121',
+            link: '/markets',
         },
         {
             title: 'Transactions',
             icon: <SyncAltIcon />,
-            link: '#',
+            link: '/transactions',
         },
         {
             title: 'Profile',
             icon: <PersonOutlineIcon />,
-            link: '#',
+            link: '/profile',
         },
         {
             title: 'Setting',

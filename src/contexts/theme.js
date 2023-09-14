@@ -1,18 +1,18 @@
-import { ThemeProvider, createTheme } from "@mui/material";
+import { ThemeProvider, createTheme, useTheme } from "@mui/material";
 import { createContext, useContext, useMemo, useState } from "react";
 import { DARK_THEME, LIGHT_THEME, colorPaletteDark, colorPaletteLight, colorPaletteWhiteAndBlack } from "../configs/meta/colorPalette";
 
 
-// color design tokens export
+// COLOR DESIGN TOKENS
 const tokens = (mode) => ({
   ...colorPaletteWhiteAndBlack,
   ...(mode === DARK_THEME
-    ? {...colorPaletteDark}
-    : {...colorPaletteLight}),
+    ? { ...colorPaletteDark }
+    : { ...colorPaletteLight }),
 });
 
 
-// mui theme settings
+// MUI THEME SETTINGS
 const themeSettings = (mode) => {
   const colors = tokens(mode);
   return {
@@ -105,14 +105,14 @@ const useMode = () => {
 
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
 
-  return [theme, colorMode];
+  return { mode, theme, colorMode };
 
 }
 
 
 // CONTEXT PROVIDER
 const ColorModeProvider = ({ children }) => {
-  const [theme, colorMode] = useMode();
+  const { theme, colorMode } = useMode();
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
@@ -124,7 +124,7 @@ const ColorModeProvider = ({ children }) => {
 
 // USE COLOR MODE CONTEXT HOOK
 const useColorMode = () => {
-  
+
   const context = useContext(ColorModeContext);
   if (!context) {
     throw new Error('useColorMode must be used within a MyContextProvider');
@@ -132,4 +132,12 @@ const useColorMode = () => {
   return context;
 };
 
-export { ColorModeProvider, useColorMode, tokens };
+const useColors = () => {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+  const { mode } = useMode();
+
+  return { mode, colors }
+}
+
+export { ColorModeProvider, useColorMode, tokens, useColors };
