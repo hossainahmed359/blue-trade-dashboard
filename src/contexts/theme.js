@@ -81,6 +81,10 @@ const themeSettings = (mode) => {
         fontFamily: ["Inter", "sans-serif"].join(","),
         fontSize: 14,
       },
+      p: {
+        fontFamily: ["Inter", "sans-serif"].join(","),
+        fontSize: 12,
+      }
     },
   };
 };

@@ -9,7 +9,7 @@ const Dashboard = ({ children }) => {
       <SideNav />
       <main className="content">
         <Topbar />
-        <Box m={'20px'}>
+        <Box m={'2rem'}>
           {children}
         </Box>
       </main>
