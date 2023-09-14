@@ -9,14 +9,13 @@ function App() {
   return (
     <Providers>
       <CssBaseline />
-      <div className="app">
         <Dashboard>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="*" element={<>This is pages are not available</>} />
+            <Route path="*" element={<>This is is not available</>} />
           </Routes>
         </Dashboard>
-      </div>
+
     </Providers>
   );
 }
