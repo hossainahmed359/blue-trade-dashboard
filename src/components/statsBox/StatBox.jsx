@@ -8,8 +8,6 @@ const StatBox = ({ IconElement, chosenColors, isMainBalance, title, subtitle, ba
 
   const { colors } = useColors();
 
-  console.log(colors)
-
   return (
     <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '20px' }}>
       <Box

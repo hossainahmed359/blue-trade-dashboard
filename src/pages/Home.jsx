@@ -13,7 +13,7 @@ const Home = () => {
     <Box >
       <Grid container spacing={2}>
         {statBoxMeta(colors).map((item, index) =>
-          <Grid key={`statsbox-${index+1}`} item xs={3} >
+          <Grid key={`statsbox-${index+1}`} item xs={12} sm={6} lg={3}>
             <Box sx={{ backgroundColor: colors.elementBg, borderRadius: '12px', padding: '20px' }}>
               <StatBox {...item}/>
             </Box>
