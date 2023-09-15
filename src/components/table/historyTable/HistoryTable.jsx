@@ -61,11 +61,12 @@ const HistoryTable = () => {
                       alignItems: 'center',
                       width: '25px',
                       height: '25px',
-                      borderRadius: '50%'
+                      borderRadius: '50%',
+                     
                     }}>
                       {row.nagBalance ?
-                        <ArrowDownwardIcon sx={{ color: colors.redAccent[500], fontSize: '14px' }} /> :
-                        <ArrowUpwardIcon sx={{ color: colors.greenAccent[500], fontSize: '14px' }} />
+                        <ArrowDownwardIcon sx={{ color: colors.redAccent[400], fontSize: '14px' }} /> :
+                        <ArrowUpwardIcon sx={{ color: colors.greenAccent[400], fontSize: '14px' }} />
                       }
                     </Box>
                   </TableCell>
