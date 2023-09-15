@@ -9,7 +9,7 @@ const Dashboard = ({ children }) => {
       <SideNav />
       <main className="content">
         <Topbar />
-        <Box m={'2rem'}>
+        <Box sx={{margin: '2rem'}}>
           {children}
         </Box>
       </main>
