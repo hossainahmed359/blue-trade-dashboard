@@ -61,17 +61,18 @@ const MarketsTable = () => {
                     sx={{
                       maringLeft: 'auto',
                       paddingRight: 0,
-                      fontWeight: 500
+                      fontWeight: 500,
+                      fontSize: '10px'
                     }}>
                     <Box
                       sx={{
                         backgroundColor: checkIsNeg(row.percentage) ? colors.redAccent[800] : colors.greenAccent[800],
                         color: checkIsNeg(row.percentage) ? colors.redAccent[400] : colors.greenAccent[500],
                         marginLeft: 'auto',
-                        padding: '3px 5px',
+                        padding: '4px',
                         borderRadius: '13px',
                         textAlign: 'center',
-                        width: '59px'
+                        width: '55px'
                       }}>
                       {row.percentage}%
                     </Box>
