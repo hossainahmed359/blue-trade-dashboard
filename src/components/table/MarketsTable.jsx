@@ -44,7 +44,7 @@ const MarketsTable = () => {
   const { mode } = useColorMode();
 
   return (
-    <Grid container gap={2}>
+    <Grid container gap={3}>
       <Grid item sm={12}>
         Top
       </Grid>
@@ -52,6 +52,7 @@ const MarketsTable = () => {
         <TableContainer sx={{
           maxHeight: '290px',
           paddingRight: '15px',
+          color: colors.textColor,
 
           "&::-webkit-scrollbar": {
             width: 3
@@ -75,19 +76,21 @@ const MarketsTable = () => {
 
                   }}
                 >
-                  <TableCell sx={{ fontWeight: 600, paddingLeft: 0 }} component="th" scope="row">
+                  <TableCell sx={{ fontWeight: 600, paddingLeft: 0, }} component="th" scope="row">
                     {row.market}
                   </TableCell>
-                  <TableCell align="left" sx={{ color: colors.grey[500], fontWeight: 600, fontSize: '12px' }}>{row.currency}</TableCell>
-                  <TableCell align="right" sx={{ paddingLeft: 0 }}>{row.price}</TableCell>
-                  <TableCell align="right" sx={{
-                    maringLeft: 'auto', 
-                    paddingRight: 0,
-                  }}>
+                  <TableCell align="left" sx={{ color: colors.grey[400], fontWeight: 600, fontSize: '12px' }}>{row.currency}</TableCell>
+                  <TableCell align="right" sx={{ paddingLeft: 0, fontWeight: 600 }}>{row.price}</TableCell>
+                  <TableCell align="right"
+                    sx={{
+                      maringLeft: 'auto',
+                      paddingRight: 0,
+                      fontWeight: 500
+                    }}>
                     <Box
                       sx={{
                         backgroundColor: checkIsNeg(row.percentage) ? colors.redAccent[800] : colors.greenAccent[800],
-                        color: checkIsNeg(row.percentage) ? colors.redAccent[500] : colors.greenAccent[500],
+                        color: checkIsNeg(row.percentage) ? colors.redAccent[400] : colors.greenAccent[500],
                         marginLeft: 'auto',
                         padding: '3px 5px',
                         borderRadius: '13px',
@@ -107,16 +110,18 @@ const MarketsTable = () => {
         <Button
           variant="text"
           sx={{
-            fontSize: '9px',
+            fontSize: '10px',
             color: colors.grey[500],
             fontWeight: 600,
             border: `1px solid ${colors.grey[800]}`,
             padding: '5px',
-            marginRight: '15px',
+            marginRight: '14px',
             borderRadius: '7px',
             background: mode === DARK_THEME ? colors.grey[900] : 'none',
             textTransform: 'capitalize',
-          }}>View All</Button>
+          }}>
+          View All
+        </Button>
       </Grid>
     </Grid>
   )
