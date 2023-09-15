@@ -1,19 +1,29 @@
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
+import CurrencyBitcoinOutlinedIcon from '@mui/icons-material/CurrencyBitcoinOutlined';
+import { BitCoinIcon, EthereumIcon, IcSolIcon, WalletIcon } from '../../assets/images/icons/icons';
 
 
-function getRandomNumber(min, max) {
-    return Math.round(Math.random() * (max - min) + min);
-}
 
-const generateRandomGraphData = (length = 7) => {
+const data = [
 
-    const arr = Array.from({ length })
-    arr.forEach(((el, index) => arr[index] = getRandomNumber(10, 1000)))
+    { "x": 2000, "y": 2 },
+    { "x": 2001, "y": 4 },
+    { "x": 2002, "y": 9 },
+    { "x": 2003, "y": 5 },
+    { "x": 2004, "y": 12 },
+    { "x": 2005, "y": 9 },
+    { "x": 2006, "y": 8 },
+    { "x": 2007, "y": 20 },
+    { "x": 2008, "y": 10 },
+    { "x": 2009, "y":  8},
+];
 
-    const xLabels = Array.from({ length }).map((el, index) => index + 1);
-    const pData = [...arr];
 
-    return { xLabels, pData }
+const generateLineChartData = () => {
+    const xLabels = data.map(item => item.x);
+    const pData = data.map(item => item.y);
+
+    return {xLabels, pData}
 }
 
 
@@ -21,7 +31,7 @@ export const statBoxMeta = (colors) => {
 
     return [
         {
-            IconElement: (color) => <AccountBalanceWalletIcon sx={{ color: color, fontSize: '1.7rem' }} />,
+            IconElement: (color) => <WalletIcon color={color}/>,
             chosenColors: {
                 primaryColor: colors.blueAccent[500],
                 bgColor: colors.blueAccent[800],
@@ -37,59 +47,59 @@ export const statBoxMeta = (colors) => {
             },
         },
         {
-            IconElement: (color) => <AccountBalanceWalletIcon sx={{ color: color, fontSize: '1.7rem' }} />,
+            IconElement: (color) => <BitCoinIcon color={color}/>,
             chosenColors: {
-                primaryColor: colors.blueAccent[500],
-                bgColor: colors.blueAccent[800],
+                primaryColor: colors.greenAccent[500],
+                bgColor: colors.greenAccent[800],
             },
-            title: 'Estimated Balance',
+            title: 'BTCUSDT',
             subtitle: 'Bitcoin',
-            balance: '$123,987',
+            balance: '$23,738',
             stats: {
-                statsTitle: 'Monthly Profit',
-                statsPrice: '-$2560.78',
+                statsTitle: 'PNL Daily',
+                statsPrice: '-$16.78',
                 isBalanceNeg: true,
-                statsPercentage: '14.67%'
+                statsPercentage: '+14.67%'
             },
-            graphData: generateRandomGraphData()
+            graphData: generateLineChartData()
 
         },
         {
-            IconElement: (color) => <AccountBalanceWalletIcon sx={{ color: color, fontSize: '1.7rem' }} />,
+            IconElement: (color) => <EthereumIcon color={color}/>,
             chosenColors: {
                 primaryColor: colors.blueAccent[500],
                 bgColor: colors.blueAccent[800],
             },
 
-            title: 'Estimated Balance',
-            subtitle: 'Bitcoin',
-            balance: '$123,987',
+            title: 'ETHUSDT',
+            subtitle: 'Ethereum',
+            balance: '$23,738',
             stats: {
-                statsTitle: 'Monthly Profit',
-                statsPrice: '+$2560.78',
+                statsTitle: 'PNL Daily',
+                statsPrice: '+$189.91',
                 isBalanceNeg: false,
-                statsPercentage: '+14.67%'
+                statsPercentage: '+24.68%'
             },
-            graphData: generateRandomGraphData()
+            graphData: generateLineChartData()
 
         },
         {
-            IconElement: (color) => <AccountBalanceWalletIcon sx={{ color: color, fontSize: '1.7rem' }} />,
+            IconElement: (color) => <IcSolIcon color={color}/>,
             chosenColors: {
                 primaryColor: colors.blueAccent[500],
                 bgColor: colors.blueAccent[800],
             },
 
-            title: 'Estimated Balance',
-            subtitle: 'Bitcoin',
-            balance: '$123,987',
+            title: 'SOLUSDT',
+            subtitle: 'Solana',
+            balance: '$23,738',
             stats: {
-                statsTitle: 'Monthly Profit',
-                statsPrice: '+$2560.78',
+                statsTitle: 'PNL Daily',
+                statsPrice: '+$556.14',
                 isBalanceNeg: false,
-                statsPercentage: '+14.67%'
+                statsPercentage: '+64.11%'
             },
-            graphData: generateRandomGraphData()
+            graphData: generateLineChartData()
 
         },
 

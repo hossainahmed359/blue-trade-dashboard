@@ -28,7 +28,7 @@ const StatBox = ({ IconElement, chosenColors, isMainBalance, title, subtitle, ba
           <Box sx={{ width: '100%' }}>
             {/* TOP HEADER */}
             <Box sx={{ display: 'flex', justifyContent: 'start', alignItems: 'center', gap: '10px' }}>
-              <Box sx={{ backgroundColor: chosenColors.bgColor, padding: '5px', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: '8px' }}>
+              <Box sx={{width: '40px', height: '40px', backgroundColor: chosenColors.bgColor, padding: '7px', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: '8px' }}>
                 {IconElement(chosenColors.primaryColor)}
               </Box>
               <Box>
