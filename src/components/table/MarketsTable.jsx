@@ -5,9 +5,9 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import { Box, Button, Grid, Typography } from '@mui/material';
-import { useColorMode, useColors } from '../../contexts/theme';
-import { DARK_THEME } from '../../configs/meta/colorPalette';
+import { useColors } from '../../contexts/theme';
 import { marketCategory, marketTableRows } from '../../configs/meta/marketsTableMeta';
+import { ViewAllBtn } from '../button/ViewAllBtn';
 
 
 
@@ -130,11 +130,8 @@ export const CategoryBtn = ({ onClick = () => { }, active, children }) => {
           color: colors.blueAccent[500],
           background: colors.grey[900],
         },
-
         minWidth: 'max-content',
         minHeight: 'max-content',
-        // paddingLeft: '12px',
-        // paddingRight: '12px',
         padding: '5px 10px'
 
       }}>
@@ -145,27 +142,3 @@ export const CategoryBtn = ({ onClick = () => { }, active, children }) => {
 
 
 
-export const ViewAllBtn = ({ onClick = () => { } }) => {
-
-  const { colors } = useColors();
-  const { mode } = useColorMode();
-
-  return (
-    <Button
-      onClick={onClick}
-      variant="text"
-      sx={{
-        fontSize: '10px',
-        color: colors.grey[500],
-        fontWeight: 600,
-        border: `1px solid ${colors.grey[800]}`,
-        padding: '5px',
-        marginRight: '14px',
-        borderRadius: '7px',
-        background: mode === DARK_THEME ? colors.grey[900] : 'none',
-        textTransform: 'capitalize',
-      }}>
-      View All
-    </Button>
-  )
-}
