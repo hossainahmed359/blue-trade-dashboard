@@ -3,7 +3,7 @@ import { useColorMode, useColors } from '../../contexts/theme';
 import { DARK_THEME } from '../../configs/meta/colorPalette';
 import { Button } from '@mui/material';
 
-export const ViewAllBtn = ({ onClick = () => { } }) => {
+export const ViewAllBtn = ({ onClick = () => { }, sx }) => {
 
     const { colors } = useColors();
     const { mode } = useColorMode();
@@ -22,6 +22,7 @@ export const ViewAllBtn = ({ onClick = () => { } }) => {
           borderRadius: '7px',
           background: mode === DARK_THEME ? colors.grey[900] : 'none',
           textTransform: 'capitalize',
+          ...sx
         }}>
         View All
       </Button>
