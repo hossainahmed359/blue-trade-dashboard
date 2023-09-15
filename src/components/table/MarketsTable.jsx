@@ -32,6 +32,10 @@ const rows = [
 ];
 
 
+const checkIsNeg = (value) => {
+  return value < 0 ? true : false;
+}
+
 const MarketsTable = () => {
 
   const { colors } = useColors();
@@ -73,8 +77,8 @@ const MarketsTable = () => {
                   <TableCell align="right" sx={{ paddingRight: 0 }}>
                     <Box
                       sx={{
-                        backgroundColor: colors.greenAccent[800],
-                        color: colors.greenAccent[500],
+                        backgroundColor: checkIsNeg(row.percentage) ? colors.redAccent[800] : colors.greenAccent[800],
+                        color: checkIsNeg(row.percentage) ? colors.redAccent[500] : colors.greenAccent[500],
                         display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center',
