@@ -1,8 +1,6 @@
 import { BitCoinIcon, EthereumIcon, IcSolIcon, WalletIcon } from '../../assets/images/icons/icons';
 
-
 const data = [
-
     { "x": 2000, "y": 2 },
     { "x": 2001, "y": 4 },
     { "x": 2002, "y": 9 },
@@ -19,7 +17,6 @@ const data = [
 const generateLineChartData = () => {
     const xLabels = data.map(item => item.x);
     const pData = data.map(item => item.y);
-
     return {xLabels, pData}
 }
 
@@ -83,8 +80,8 @@ export const statBoxMeta = (colors) => {
         {
             IconElement: (color) => <IcSolIcon color={color}/>,
             chosenColors: {
-                primaryColor: colors.orangeAccent[500],
-                bgColor: colors.orangeAccent[800],
+                primaryColor: colors.redAccent[500],
+                bgColor: colors.redAccent[800],
             },
 
             title: 'SOLUSDT',
