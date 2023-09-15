@@ -23,6 +23,7 @@ const Home = () => {
         </Grid>
       </Grid>
 
+
       {/* MIDDLE SECTION */}
       <Grid item xs={12}>
         <Grid container spacing={2}>

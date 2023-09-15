@@ -1,37 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
-import { Box, Button, Grid } from '@mui/material';
+import { Box, Button, Grid, Typography } from '@mui/material';
 import { useColorMode, useColors } from '../../contexts/theme';
-import { useTheme } from '@emotion/react';
 import { DARK_THEME } from '../../configs/meta/colorPalette';
+import { marketCategory, marketTableRows } from '../../configs/meta/marketsTableMeta';
 
-function createData(
-  market,
-  currency,
-  price,
-  percentage,
-) {
-  return { market, currency, price, percentage };
-}
-
-const rows = [
-  createData('BTCUSDT', 'Bitcoin', '$23,495', +23.4),
-  createData('AXSUSDT', 'Axie Infinity', '$15.9', -7.8),
-  createData('ETHUSDT', 'Ethereum', '$15,978', -0.3),
-  createData('SOLUSDT', 'Solana', '$495', +11.1),
-  createData('BNBUSDT', 'Binance', '$267 ', +6.7),
-  createData('ADAUSDT', 'Cardano', '$0.49', -1.4),
-  createData('BTCUSTD', 'Bitcoin', '$23,495', +23.4),
-  createData('AXSUSTD', 'Axie Infinity', '$15.9', -7.8),
-  createData('ETHUSTD', 'Ethereum', '$15,978', -0.3),
-  createData('SOLUSTD', 'Solana', '$495', +11.1),
-  createData('BNBUSTD', 'Binance', '$267 ', +6.7),
-  createData('ADAUSTD', 'Cardano', '$0.49', -1.4),
-];
 
 
 const checkIsNeg = (value) => {
@@ -41,16 +18,32 @@ const checkIsNeg = (value) => {
 const MarketsTable = () => {
 
   const { colors } = useColors();
-  const { mode } = useColorMode();
+
+  const [category, setCategory] = useState(marketCategory[0]);
+
 
   return (
-    <Grid container gap={3}>
+    <Grid container gap={2}>
       <Grid item sm={12}>
-        Top
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginRight: '20px', gap: '10px' }}>
+          <Typography variant="h4" sx={{ color: colors.textColor, fontWeight: '600' }}>
+            Markets
+          </Typography>
+          <Box sx={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '5px' }}>
+            {marketCategory.map((item, index) =>
+              <CategoryBtn
+                key={`category-${index + 1}`}
+                onClick={() => setCategory(item)}
+                active={item === category ? true : false}
+              >
+                {item}
+              </CategoryBtn>)}
+          </Box>
+        </Box>
       </Grid>
       <Grid item sm={12}>
         <TableContainer sx={{
-          maxHeight: '290px',
+          height: '290px',
           paddingRight: '15px',
           color: colors.textColor,
 
@@ -67,7 +60,7 @@ const MarketsTable = () => {
         }}>
           <Table>
             <TableBody>
-              {rows.map((row) => (
+              {marketTableRows[category].map((row) => (
                 <TableRow
                   key={row.market}
                   sx={{
@@ -106,25 +99,73 @@ const MarketsTable = () => {
           </Table>
         </TableContainer>
       </Grid>
-      <Grid item sm={12} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
-        <Button
-          variant="text"
-          sx={{
-            fontSize: '10px',
-            color: colors.grey[500],
-            fontWeight: 600,
-            border: `1px solid ${colors.grey[800]}`,
-            padding: '5px',
-            marginRight: '14px',
-            borderRadius: '7px',
-            background: mode === DARK_THEME ? colors.grey[900] : 'none',
-            textTransform: 'capitalize',
-          }}>
-          View All
-        </Button>
+      <Grid item sm={12} >
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
+          <ViewAllBtn />
+        </Box>
       </Grid>
     </Grid>
   )
 }
 
 export default MarketsTable
+
+export const CategoryBtn = ({ onClick = () => { }, active, children }) => {
+
+  const { colors } = useColors();
+
+  return (
+    <Button
+      onClick={onClick}
+      className={`${active ? 'active' : ''}`}
+      sx={{
+        textTransform: 'capitalize',
+        color: colors.textColor,
+        fontWeight: 600,
+        background: colors.grey[900],
+        fontSize: '9px',
+        borderRadius: '7px',
+        transition: 'all 0.2s',
+        '&:hover , &.active': {
+          color: colors.blueAccent[500],
+          background: colors.grey[900],
+        },
+
+        minWidth: 'max-content',
+        minHeight: 'max-content',
+        // paddingLeft: '12px',
+        // paddingRight: '12px',
+        padding: '5px 10px'
+
+      }}>
+      {children}
+    </Button>
+  )
+}
+
+
+
+export const ViewAllBtn = ({ onClick = () => { } }) => {
+
+  const { colors } = useColors();
+  const { mode } = useColorMode();
+
+  return (
+    <Button
+      onClick={onClick}
+      variant="text"
+      sx={{
+        fontSize: '10px',
+        color: colors.grey[500],
+        fontWeight: 600,
+        border: `1px solid ${colors.grey[800]}`,
+        padding: '5px',
+        marginRight: '14px',
+        borderRadius: '7px',
+        background: mode === DARK_THEME ? colors.grey[900] : 'none',
+        textTransform: 'capitalize',
+      }}>
+      View All
+    </Button>
+  )
+}
