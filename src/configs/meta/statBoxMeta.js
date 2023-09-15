@@ -1,7 +1,4 @@
-import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
-import CurrencyBitcoinOutlinedIcon from '@mui/icons-material/CurrencyBitcoinOutlined';
 import { BitCoinIcon, EthereumIcon, IcSolIcon, WalletIcon } from '../../assets/images/icons/icons';
-
 
 
 const data = [
@@ -49,8 +46,8 @@ export const statBoxMeta = (colors) => {
         {
             IconElement: (color) => <BitCoinIcon color={color}/>,
             chosenColors: {
-                primaryColor: colors.greenAccent[500],
-                bgColor: colors.greenAccent[800],
+                primaryColor: colors.yellowAccent[500],
+                bgColor: colors.yellowAccent[800],
             },
             title: 'BTCUSDT',
             subtitle: 'Bitcoin',
@@ -67,8 +64,8 @@ export const statBoxMeta = (colors) => {
         {
             IconElement: (color) => <EthereumIcon color={color}/>,
             chosenColors: {
-                primaryColor: colors.blueAccent[500],
-                bgColor: colors.blueAccent[800],
+                primaryColor: colors.purpleAccent[500],
+                bgColor: colors.purpleAccent[800],
             },
 
             title: 'ETHUSDT',
@@ -86,8 +83,8 @@ export const statBoxMeta = (colors) => {
         {
             IconElement: (color) => <IcSolIcon color={color}/>,
             chosenColors: {
-                primaryColor: colors.blueAccent[500],
-                bgColor: colors.blueAccent[800],
+                primaryColor: colors.orangeAccent[500],
+                bgColor: colors.orangeAccent[800],
             },
 
             title: 'SOLUSDT',

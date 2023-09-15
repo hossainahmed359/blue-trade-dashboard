@@ -41,7 +41,7 @@ const StatBox = ({ IconElement, chosenColors, isMainBalance, title, subtitle, ba
                   </Typography>}
               </Box>
               {isMainBalance &&
-                <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: '10px', flex: 1, textAlign: 'right' }}>
+                <Box sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', borderRadius: '10px', flex: 1, textAlign: 'right', marginRight: '1.2rem' }}>
                   <RemoveRedEyeOutlinedIcon sx={{ color: colors.grey[500], fontSize: '1.3rem', }} />
                 </Box>}
 

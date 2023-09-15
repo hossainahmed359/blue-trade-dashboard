@@ -39,7 +39,6 @@ export const colorPaletteDark = {
         700: "#3d3d3d",
         800: "#292929",
         900: "#141414",
-
     },
     primary: {
         100: "#d0d1d5",
@@ -62,7 +61,6 @@ export const colorPaletteDark = {
         700: "#176739",
         800: "#0f4426",
         900: "#082213"
-
     },
     redAccent: {
         100: "#fce2e2",
@@ -74,7 +72,6 @@ export const colorPaletteDark = {
         700: "#8f4242",
         800: "#5f2c2c",
         900: "#301616"
-
     },
     blueAccent: {
         100: "#d6e6ff",
@@ -98,6 +95,39 @@ export const colorPaletteDark = {
         800: "#004e59",
         900: "#00272d"
     },
+    yellowAccent: {
+        100: "#fff1db",
+        200: "#ffe3b6",
+        300: "#ffd492",
+        400: "#ffc66d",
+        500: "#ffb849",
+        600: "#cc933a",
+        700: "#996e2c",
+        800: "#664a1d",
+        900: "#33250f"
+    },
+    purpleAccent: {
+        100: "#e9e6f8",
+        200: "#d3cdf1",
+        300: "#bdb3e9",
+        400: "#a79ae2",
+        500: "#9181db",
+        600: "#7467af",
+        700: "#574d83",
+        800: "#3a3458",
+        900: "#1d1a2c"
+    },
+    orangeAccent: {
+        100: "#fcecec",
+        200: "#f9d9d9",
+        300: "#f6c6c6",
+        400: "#f3b3b3",
+        500: "#f0a0a0",
+        600: "#c08080",
+        700: "#906060",
+        800: "#604040",
+        900: "#302020"
+    },
     elementBg: '#1c1c25',
     textColor: '#ffffff',
 } 
@@ -113,7 +143,6 @@ export const colorPaletteLight = {
         700: "#a3a3a3",
         800: "#c2c2c2",
         900: "#e0e0e0",
-
     },
     primary: {
         100: "#040509",
@@ -172,6 +201,40 @@ export const colorPaletteLight = {
         800: "#99e7f2",
         900: "#ccf3f9",
     },
+    yellowAccent: {
+        100: "#33250f",
+        200: "#664a1d",
+        300: "#996e2c",
+        400: "#cc933a",
+        500: "#ffb849",
+        600: "#ffc66d",
+        700: "#ffd492",
+        800: "#ffe3b6",
+        900: "#fff1db",
+    },
+    purpleAccent: {
+        100: "#1d1a2c",
+        200: "#3a3458",
+        300: "#574d83",
+        400: "#7467af",
+        500: "#9181db",
+        600: "#a79ae2",
+        700: "#bdb3e9",
+        800: "#d3cdf1",
+        900: "#e9e6f8",
+    },
+    orangeAccent: {
+        100: "#302020",
+        200: "#604040",
+        300: "#906060",
+        400: "#c08080",
+        500: "#f0a0a0",
+        600: "#f3b3b3",
+        700: "#f6c6c6",
+        800: "#f9d9d9",
+        900: "#fcecec",
+    },
     elementBg: '#ffffff',
     textColor:'#1c1c25',
 }
+
