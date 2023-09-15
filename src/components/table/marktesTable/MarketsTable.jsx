@@ -4,10 +4,12 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
-import { Box, Button, Grid, Typography } from '@mui/material';
-import { useColors } from '../../contexts/theme';
-import { marketCategory, marketTableRows } from '../../configs/meta/marketsTableMeta';
-import { ViewAllBtn } from '../button/ViewAllBtn';
+import { Box, Grid, Typography } from '@mui/material';
+import { useColors } from '../../../contexts/theme';
+import { marketCategory, marketTableRows } from '../../../configs/meta/marketsTableMeta';
+import { ViewAllBtn } from '../../button/ViewAllBtn';
+import { CategoryBtn } from '../../button/CategoryBtn';
+import MarketsCategorySection from './MarketsCategory';
 
 
 
@@ -18,35 +20,19 @@ const checkIsNeg = (value) => {
 const MarketsTable = () => {
 
   const { colors } = useColors();
-
-  const [category, setCategory] = useState(marketCategory[0]);
+  const [category, setCategory] = useState('All');
 
 
   return (
     <Grid container gap={2}>
       <Grid item sm={12}>
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginRight: '20px', gap: '10px' }}>
-          <Typography variant="h4" sx={{ color: colors.textColor, fontWeight: '600' }}>
-            Markets
-          </Typography>
-          <Box sx={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '5px' }}>
-            {marketCategory.map((item, index) =>
-              <CategoryBtn
-                key={`category-${index + 1}`}
-                onClick={() => setCategory(item)}
-                active={item === category ? true : false}
-              >
-                {item}
-              </CategoryBtn>)}
-          </Box>
-        </Box>
+        <MarketsCategorySection category={category} setCategory={setCategory} />
       </Grid>
       <Grid item sm={12}>
         <TableContainer sx={{
           height: '290px',
           paddingRight: '15px',
           color: colors.textColor,
-
           "&::-webkit-scrollbar": {
             width: 3
           },
@@ -66,12 +52,9 @@ const MarketsTable = () => {
                   sx={{
                     'td, th': { borderBottom: `0.05rem solid ${colors.grey[900]}`, paddingY: '13px' },
                     '&:last-child td, &:last-child th': { border: 0 },
-
                   }}
                 >
-                  <TableCell sx={{ fontWeight: 600, paddingLeft: 0, }} component="th" scope="row">
-                    {row.market}
-                  </TableCell>
+                  <TableCell sx={{ fontWeight: 600, paddingLeft: 0, }} component="th" scope="row">{row.market}</TableCell>
                   <TableCell align="left" sx={{ color: colors.grey[400], fontWeight: 600, fontSize: '12px' }}>{row.currency}</TableCell>
                   <TableCell align="right" sx={{ paddingLeft: 0, fontWeight: 600 }}>{row.price}</TableCell>
                   <TableCell align="right"
@@ -108,37 +91,11 @@ const MarketsTable = () => {
   )
 }
 
-export default MarketsTable
+export default MarketsTable;
 
-export const CategoryBtn = ({ onClick = () => { }, active, children }) => {
 
-  const { colors } = useColors();
 
-  return (
-    <Button
-      onClick={onClick}
-      className={`${active ? 'active' : ''}`}
-      sx={{
-        textTransform: 'capitalize',
-        color: colors.textColor,
-        fontWeight: 600,
-        background: colors.grey[900],
-        fontSize: '9px',
-        borderRadius: '7px',
-        transition: 'all 0.2s',
-        '&:hover , &.active': {
-          color: colors.blueAccent[500],
-          background: colors.grey[900],
-        },
-        minWidth: 'max-content',
-        minHeight: 'max-content',
-        padding: '5px 10px'
 
-      }}>
-      {children}
-    </Button>
-  )
-}
 
 
 

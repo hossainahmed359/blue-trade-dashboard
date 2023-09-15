@@ -3,7 +3,7 @@ import React from 'react'
 import { useColors } from '../contexts/theme'
 import StatBox from '../components/statsBox/StatBox';
 import { statBoxMeta } from '../configs/meta/statBoxMeta';
-import MarketsTable from '../components/table/MarketsTable';
+import MarketsTable from '../components/table/marktesTable/MarketsTable';
 
 const Home = () => {
 
