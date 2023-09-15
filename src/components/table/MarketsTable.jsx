@@ -4,8 +4,10 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
-import { Box } from '@mui/material';
-import { useColors } from '../../contexts/theme';
+import { Box, Button, Grid } from '@mui/material';
+import { useColorMode, useColors } from '../../contexts/theme';
+import { useTheme } from '@emotion/react';
+import { DARK_THEME } from '../../configs/meta/colorPalette';
 
 function createData(
   market,
@@ -23,12 +25,12 @@ const rows = [
   createData('SOLUSDT', 'Solana', '$495', +11.1),
   createData('BNBUSDT', 'Binance', '$267 ', +6.7),
   createData('ADAUSDT', 'Cardano', '$0.49', -1.4),
-  createData('BTCUSDT', 'Bitcoin', '$23,495', +23.4),
-  createData('AXSUSDT', 'Axie Infinity', '$15.9', -7.8),
-  createData('ETHUSDT', 'Ethereum', '$15,978', -0.3),
-  createData('SOLUSDT', 'Solana', '$495', +11.1),
-  createData('BNBUSDT', 'Binance', '$267 ', +6.7),
-  createData('ADAUSDT', 'Cardano', '$0.49', -1.4),
+  createData('BTCUSTD', 'Bitcoin', '$23,495', +23.4),
+  createData('AXSUSTD', 'Axie Infinity', '$15.9', -7.8),
+  createData('ETHUSTD', 'Ethereum', '$15,978', -0.3),
+  createData('SOLUSTD', 'Solana', '$495', +11.1),
+  createData('BNBUSTD', 'Binance', '$267 ', +6.7),
+  createData('ADAUSTD', 'Cardano', '$0.49', -1.4),
 ];
 
 
@@ -39,10 +41,14 @@ const checkIsNeg = (value) => {
 const MarketsTable = () => {
 
   const { colors } = useColors();
+  const { mode } = useColorMode();
 
   return (
-    <Box>
-      <Box >
+    <Grid container gap={2}>
+      <Grid item sm={12}>
+        Top
+      </Grid>
+      <Grid item sm={12}>
         <TableContainer sx={{
           maxHeight: '290px',
           paddingRight: '15px',
@@ -72,18 +78,21 @@ const MarketsTable = () => {
                   <TableCell sx={{ fontWeight: 600, paddingLeft: 0 }} component="th" scope="row">
                     {row.market}
                   </TableCell>
-                  <TableCell align="left" sx={{ color: colors.grey[500], fontWeight: 600, fontSize: '11px' }}>{row.currency}</TableCell>
+                  <TableCell align="left" sx={{ color: colors.grey[500], fontWeight: 600, fontSize: '12px' }}>{row.currency}</TableCell>
                   <TableCell align="right" sx={{ paddingLeft: 0 }}>{row.price}</TableCell>
-                  <TableCell align="right" sx={{ paddingRight: 0 }}>
+                  <TableCell align="right" sx={{
+                    maringLeft: 'auto', 
+                    paddingRight: 0,
+                  }}>
                     <Box
                       sx={{
                         backgroundColor: checkIsNeg(row.percentage) ? colors.redAccent[800] : colors.greenAccent[800],
                         color: checkIsNeg(row.percentage) ? colors.redAccent[500] : colors.greenAccent[500],
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
+                        marginLeft: 'auto',
                         padding: '3px 5px',
-                        borderRadius: '13px'
+                        borderRadius: '13px',
+                        textAlign: 'center',
+                        width: '59px'
                       }}>
                       {row.percentage}%
                     </Box>
@@ -93,8 +102,23 @@ const MarketsTable = () => {
             </TableBody>
           </Table>
         </TableContainer>
-      </Box>
-    </Box>
+      </Grid>
+      <Grid item sm={12} sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
+        <Button
+          variant="text"
+          sx={{
+            fontSize: '9px',
+            color: colors.grey[500],
+            fontWeight: 600,
+            border: `1px solid ${colors.grey[800]}`,
+            padding: '5px',
+            marginRight: '15px',
+            borderRadius: '7px',
+            background: mode === DARK_THEME ? colors.grey[900] : 'none',
+            textTransform: 'capitalize',
+          }}>View All</Button>
+      </Grid>
+    </Grid>
   )
 }
 
