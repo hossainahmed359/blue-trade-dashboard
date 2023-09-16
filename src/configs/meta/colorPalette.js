@@ -106,6 +106,17 @@ export const colorPaletteDark = {
         800: "#143366",
         900: "#0a1a33"
     },
+    lightBlueAccent: {
+        100: "#000103d1",
+        200: "#000309a3",
+        300: "#00071376",
+        400: "#00112d48",
+        500: "#0060ff1a",
+        600: "#d2e3ff48",
+        700: "#ecf3ff76",
+        800: "#f6faffa3",
+        900: "#fcfdffd1",
+    },
     tealAccent: {
         100: "#ccf3f9",
         200: "#99e7f2",
@@ -233,6 +244,17 @@ export const colorPaletteLight = {
         700: "#85b3ff",
         800: "#adccff",
         900: "#d6e6ff",
+    },
+    lightBlueAccent: {
+        100: "#fcfdffd1",
+        200: "#f6faffa3",
+        300: "#ecf3ff76",
+        400: "#d2e3ff48",
+        500: "#0060ff1a",
+        600: "#00112d48",
+        700: "#00071376",
+        800: "#000309a3",
+        900: "#000103d1"
     },
     tealAccent: {
         100: "#00272d",
