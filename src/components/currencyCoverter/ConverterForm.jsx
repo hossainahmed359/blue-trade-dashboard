@@ -47,7 +47,7 @@ const ConverterForm = () => {
 
   return (
     <Grid container gap={2}>
-      <Grid item sm={12}>
+      <Grid item xs={12}>
         {/* INPUT */}
         <Box sx={{
           display: 'flex',
@@ -65,7 +65,7 @@ const ConverterForm = () => {
           />
         </Box>
       </Grid>
-      <Grid item sm={12}>
+      <Grid item xs={12}>
         {/* INPUT */}
         <Box sx={{
           display: 'flex',
@@ -87,7 +87,7 @@ const ConverterForm = () => {
           />
         </Box>
       </Grid>
-      <Grid item sm={12}>
+      <Grid item xs={12}>
         <ConvertBtn />
       </Grid>
     </Grid>

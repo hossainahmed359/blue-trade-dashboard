@@ -14,14 +14,14 @@ const AssetsChart = () => {
 
   return (
     <Grid container gap={3}>
-      <Grid item sm={12}>
+      <Grid item xs={12}>
         <SectionHeader title={'Assets'} />
       </Grid>
-      <Grid item sm={12}>
+      <Grid item xs={12}>
         <PieChartWithCenterLabel />
       </Grid>
-      <Grid item sm={12}>
-        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px' }}>
+      <Grid item xs={12}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
           {data.map((item, index) =>
             <AssetLabelBadge key={index + 1} item={item} />)}
         </Box>

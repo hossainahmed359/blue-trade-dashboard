@@ -17,6 +17,7 @@ const SelectedMarktetLabel = ({ activeMarket, onClick }) => {
         <Box
             onClick={onClick}
             sx={{
+                flex: 'auto',
                 background: mode === DARK_THEME ? colors.grey[900] : colors.greyLight[500],
                 padding: '10px 20px',
                 borderRadius: '12px',

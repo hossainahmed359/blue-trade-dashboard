@@ -31,45 +31,45 @@ const Home = () => {
 
 
         {/* MIDDLE SECTION */}
-        {/* <Grid item xs={12}>
+        <Grid item xs={12}>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={8}>
+            <Grid item xs={12} lg={8}>
               <CustomCard >
-                <MarktetStatus />
+                {/* <MarktetStatus /> */}
               </CustomCard>
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={12} lg={4}>
               <CustomCard>
                 <MarketsTable />
               </CustomCard>
             </Grid>
           </Grid>
-        </Grid> */}
+        </Grid>
 
         {/* BOTTOM SECTION */}
-        {/* <Grid item xs={12}>
+        <Grid item xs={12}>
           <Grid container spacing={2}>
-            <Grid item xs={10} sm={7}>
+            <Grid item xs={12} lg={7}>
               <Grid container spacing={2}>
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={12} md={6}>
                   <CustomCard>
                     <AssetsChart />
                   </CustomCard>
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={12} md={6}>
                   <CustomCard >
                     <CurrencyConverter />
                   </CustomCard>
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item xs={12} sm={5}>
+            <Grid item xs={12} lg={5}>
               <CustomCard >
                 <HistoryTable />
               </CustomCard>
             </Grid>
           </Grid>
-        </Grid> */}
+        </Grid>
       </Grid>
     </Box>
 

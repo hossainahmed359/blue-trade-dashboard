@@ -55,30 +55,12 @@ const MyResponsiveBoxPlot = () => {
       innerPadding={10}
       axisTop={null}
       axisRight={null}
-      axisBottom={{
-        tickSize: 5,
-        tickPadding: 5,
-        tickRotation: 0,
-      }}
-      axisLeft={{
-        tickSize: 5,
-        tickPadding: 5,
-        tickRotation: 0,
-      }}
       borderColor="none"
       colors={[colors.blueAccent[700], colors.blueAccent[500]]}
       medianWidth={0}
       whiskerWidth={1}
       whiskerEndSize={0.05}
       inactiveOpacity={0.7}
-      // motionConfig={{
-      //   mass: 1,
-      //   tension: 186,
-      //   friction: 39,
-      //   clamp: false,
-      //   precision: 0.01,
-      //   velocity: 0
-      // }}
     />
   )
 

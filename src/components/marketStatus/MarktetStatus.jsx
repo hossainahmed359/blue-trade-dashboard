@@ -13,7 +13,7 @@ const MarktetStatus = () => {
       <Grid item sm={12}>
         <Box
           sx={{
-            width: 'auto',
+            width: '100%',
             height: '300px',
             display: 'flex',
             justifyContent: 'center',

@@ -11,13 +11,13 @@ const CurrencyConverter = () => {
 
   return (
     <Grid container gap={2}>
-      <Grid item sm={12}>
+      <Grid item xs={12}>
         <SectionHeader title={'Convert'} />
       </Grid>
-      <Grid item sm={12}>
+      <Grid item xs={12}>
         <ConverterForm />
       </Grid>
-      <Grid item sm={12}>
+      <Grid item xs={12}>
         <Typography
           sx={{
             color: colors.grey[500],

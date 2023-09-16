@@ -24,10 +24,10 @@ const MarketsTable = () => {
 
   return (
     <Grid container gap={2}>
-      <Grid item sm={12}>
+      <Grid item xs={12}>
         <MarketsCategorySection category={category} setCategory={setCategory} />
       </Grid>
-      <Grid item sm={12}>
+      <Grid item xs={12}>
         <TableContainer sx={{
           height: '290px',
           paddingRight: '15px',
@@ -82,7 +82,7 @@ const MarketsTable = () => {
           </Table>
         </TableContainer>
       </Grid>
-      <Grid item sm={12} >
+      <Grid item xs={12} >
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end' }}>
           <ViewAllBtn />
         </Box>

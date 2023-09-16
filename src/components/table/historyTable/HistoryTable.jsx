@@ -19,7 +19,7 @@ const HistoryTable = () => {
 
   return (
     <Grid container gap={2}>
-      <Grid item sm={12}>
+      <Grid item xs={12}>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '10px' }}>
           <Typography variant="h4" sx={{ color: colors.textColor, fontWeight: '600' }}>
             History
@@ -27,10 +27,11 @@ const HistoryTable = () => {
           <ViewAllBtn sx={{ marginRight: '0px' }} />
         </Box>
       </Grid>
-      <Grid item sm={12}>
+      <Grid item xs={12}>
         <TableContainer sx={{
           // height: '190px',
           // paddingRight: '15px',
+          overflow: 'auto',
           color: colors.textColor,
           "&::-webkit-scrollbar": {
             width: 3

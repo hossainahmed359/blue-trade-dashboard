@@ -19,7 +19,7 @@ const FilterByMarket = () => {
   }
 
   return (
-    <Box sx={{ position: 'relative', height: '80px' }}>
+    <Box sx={{ flex: 'auto', position: 'relative', height: '80px', minWidth: '300px' }}>
       <SelectedMarktetLabel activeMarket={activeMarket} onClick={() => setShowDropDown(prev => !prev)} />
 
       {/* CUSTOM DROPDOWN */}
@@ -52,12 +52,12 @@ const CustomDropDown = ({ show, handleSelect, optionsData = [] }) => {
         ...(mode !== DARK_THEME && { boxShadow: 'rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;' })
       }}>
       {optionsData.map((item, index) =>
-      
+
         <CustomOption
           key={`custom-option-${index + 1}`}
           data={item}
           handleSelect={handleSelect}
-          lastItem={optionsData.indexOf(item) === optionsData.length -1 ? true: false}
+          lastItem={optionsData.indexOf(item) === optionsData.length - 1 ? true : false}
         />)}
     </Box>
   )

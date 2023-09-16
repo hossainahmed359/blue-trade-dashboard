@@ -9,11 +9,11 @@ const MarketsCategorySection = ({ category, setCategory }) => {
   const { colors } = useColors();
 
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginRight: '20px', gap: '10px' }}>
+    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginRight: '20px', gap: '10px' , flexWrap: 'wrap'}}>
       <Typography variant="h4" sx={{ color: colors.textColor, fontWeight: '600' }}>
         Markets
       </Typography>
-      <Box sx={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '5px' }}>
+      <Box sx={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '5px', flexWrap: 'wrap' }}>
         {marketCategory.map((item, index) =>
           <CategoryBtn
             key={`category-${index + 1}`}
