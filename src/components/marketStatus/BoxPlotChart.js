@@ -2,6 +2,7 @@ import React from 'react'
 import { ResponsiveBoxPlot } from '@nivo/boxplot'
 import { useColorMode, useColors } from '../../contexts/theme'
 import { DARK_THEME } from '../../configs/meta/colorPalette';
+import { marketStatusChartData } from '../../configs/meta/marketStatusChartMeta';
 
 const MyResponsiveBoxPlot = ({ data, isDashboard = false }) => {
 
@@ -10,8 +11,14 @@ const MyResponsiveBoxPlot = ({ data, isDashboard = false }) => {
 
   return (
     <ResponsiveBoxPlot
-      data={data}
+      data={marketStatusChartData}
       theme={{
+        grid: {
+          line: {
+            stroke: colors.grey[900],
+            strokeWidth: 1, 
+          },
+        },
         axis: {
           domain: {
             line: {
