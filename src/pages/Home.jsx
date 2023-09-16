@@ -13,7 +13,7 @@ const Home = () => {
 
   return (
     <Box>
-      <Grid container spacing={2} sx={{paddingBottom: '2rem'}}>
+      <Grid container spacing={2} sx={{ paddingBottom: '2rem' }}>
         {/* TOP SECTION */}
         <Grid item xs={12}>
           <Grid container spacing={2}>
@@ -46,15 +46,19 @@ const Home = () => {
         {/* BOTTOM SECTION */}
         <Grid item xs={12}>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={3}>
-              <Box sx={{ backgroundColor: colors.elementBg, borderRadius: '12px', padding: '20px', height: '100%' }}>
-                PIE CHART
-              </Box>
-            </Grid>
-            <Grid item xs={12} sm={4}>
-              <Box sx={{ backgroundColor: colors.elementBg, borderRadius: '12px', padding: '20px', height: '100%' }}>
-                <CurrencyConverter/>
-              </Box>
+            <Grid item xs={10} sm={7}>
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={6}>
+                  <Box sx={{ backgroundColor: colors.elementBg, borderRadius: '12px', padding: '20px', height: '100%' }}>
+                    PIE CHART
+                  </Box>
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <Box sx={{ backgroundColor: colors.elementBg, borderRadius: '12px', padding: '20px', height: '100%' }}>
+                    <CurrencyConverter />
+                  </Box>
+                </Grid>
+              </Grid>
             </Grid>
             <Grid item xs={12} sm={5}>
               <Box sx={{ backgroundColor: colors.elementBg, borderRadius: '12px', padding: '20px', height: '100%' }}>

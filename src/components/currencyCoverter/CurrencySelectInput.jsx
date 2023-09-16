@@ -21,6 +21,7 @@ const CurrencySelectInput = ({ value, handleChange, options, colorMap }) => {
           padding: '3px 7px',
           fontSize: '10px',
           fontWeight: 600,
+          width: '60px',
 
           '& .MuiSelect-select': {
             background: 'none !important',

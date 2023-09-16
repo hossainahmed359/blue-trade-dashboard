@@ -14,7 +14,7 @@ const ConverterForm = () => {
   const [currecyData, setCurrectData] = useState({
     inputCurrecyCode: 'USD',
     outputCurrencyCode: 'BTC',
-    inputCurrecyValue: '100',
+    inputCurrecyValue: '',
     outputCurrencyValue: '',
   })
 
