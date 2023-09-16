@@ -1,7 +1,7 @@
 import React from 'react'
 import { useColors } from '../../contexts/theme';
 import SectionHeader from '../SectionHeader';
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 import PieChartWithCenterLabel from './PieChartWithCenterLabel';
 import { getAssetsChartData } from '../../configs/meta/assetsChartMeta';
 import AssetLabelBadge from './AssetLabelBadge';
