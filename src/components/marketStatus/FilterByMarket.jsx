@@ -21,7 +21,6 @@ const FilterByMarket = () => {
   return (
     <Box sx={{ flex: 'auto', position: 'relative', height: '80px', minWidth: '300px' }}>
       <SelectedMarktetLabel activeMarket={activeMarket} onClick={() => setShowDropDown(prev => !prev)} />
-
       {/* CUSTOM DROPDOWN */}
       <CustomDropDown show={showDropdown} setShow={setShowDropDown} handleSelect={handleSelect} optionsData={data} />
 

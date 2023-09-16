@@ -8,7 +8,7 @@ const MarketStatusHeader = () => {
 
 
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginRight: '20px', gap: '10px', flexWrap: 'wrap' }}>
+    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginRight: '20px', gap: '20px', flexWrap: 'wrap' }}>
       <FilterByMarket />
       <FilterByTime />
     </Box>

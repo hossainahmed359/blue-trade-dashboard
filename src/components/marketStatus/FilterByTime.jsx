@@ -14,7 +14,7 @@ const FilterByTime = () => {
   const [activeRange, setActiveRange] = useState('1H');
 
   return (
-    <Box sx={{ marginLeft: 'auto', flex: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '5px' }}>
+    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '5px' , flexWrap: 'wrap'}}>
       {currencyTimeRange.map((item, index) =>
         <CategoryBtn
           key={`category-${index + 1}`}
