@@ -4,6 +4,10 @@ import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { useColorMode, useColors } from '../../contexts/theme'
 import { DARK_THEME } from '../../configs/meta/colorPalette';
 
+const checkIsNeg = (value) => {
+    return value < 0 ? true : false;
+  }
+
 const SelectedMarktetLabel = ({ activeMarket, onClick }) => {
 
     const { colors } = useColors();
@@ -48,11 +52,11 @@ const SelectedMarktetLabel = ({ activeMarket, onClick }) => {
                 <Typography
                     variant="p"
                     sx={{
-                        color: colors.greenAccent[500],
+                        color: checkIsNeg(activeMarket.percentage) ? colors.redAccent[500] : colors.greenAccent[500],
                         fontSize: '10px',
                         fontWeight: 500,
                         padding: '3px 10px',
-                        backgroundColor: colors.greenAccent[800],
+                        backgroundColor:checkIsNeg(activeMarket.percentage) ? colors.redAccent[800] : colors.greenAccent[800],
                         borderRadius: '30px'
                     }}>
                     {activeMarket.percentage}%

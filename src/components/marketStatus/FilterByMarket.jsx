@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Box, FormControl, InputBase, MenuItem, Select, Typography } from '@mui/material'
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import { Box, Typography } from '@mui/material'
 import { useColorMode, useColors } from '../../contexts/theme'
 import { DARK_THEME } from '../../configs/meta/colorPalette';
 import { marketList } from '../../configs/meta/marketsTableMeta';
@@ -9,8 +8,6 @@ import SelectedMarktetLabel from './SelectedMarktetLabel';
 const data = marketList;
 
 const FilterByMarket = () => {
-  const { colors } = useColors();
-  const { mode } = useColorMode();
 
   const [showDropdown, setShowDropDown] = useState(false);
   const [activeMarket, setActiveMarket] = useState(data[1]);
@@ -42,7 +39,7 @@ const CustomDropDown = ({ show, handleSelect, optionsData = [] }) => {
 
     <Box
       sx={{
-        display: show ? 'block' : 'none',
+        display: show ? 'slide-in-top block' : 'none',
         position: 'absolute',
         top: '90px',
         bottom: 0,

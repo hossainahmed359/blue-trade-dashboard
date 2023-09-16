@@ -4,11 +4,10 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Grid} from '@mui/material';
 import { useColors } from '../../../contexts/theme';
-import { marketCategory, marketTableRows } from '../../../configs/meta/marketsTableMeta';
+import { marketTableRows } from '../../../configs/meta/marketsTableMeta';
 import { ViewAllBtn } from '../../button/ViewAllBtn';
-import { CategoryBtn } from '../../button/CategoryBtn';
 import MarketsCategorySection from './MarketsCategory';
 
 
