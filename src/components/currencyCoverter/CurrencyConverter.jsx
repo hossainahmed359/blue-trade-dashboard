@@ -1,16 +1,13 @@
 import React from 'react';
-import { Box, Grid, IconButton, Typography } from '@mui/material';
-import { useColorMode, useColors } from '../../contexts/theme';
-import { Button } from '@mui/material';
-import { DARK_THEME } from '../../configs/meta/colorPalette';
-import SectionHeader from './SectionHeader';
+import { Grid, Typography } from '@mui/material';
+import {  useColors } from '../../contexts/theme';
+import SectionHeader from '../SectionHeader';
 import ConverterForm from './ConverterForm';
 
 
 const CurrencyConverter = () => {
 
   const { colors } = useColors();
-
 
   return (
     <Grid container gap={2}>

@@ -6,6 +6,7 @@ import { statBoxMeta } from '../configs/meta/statBoxMeta';
 import MarketsTable from '../components/table/marktesTable/MarketsTable';
 import HistoryTable from '../components/table/historyTable/HistoryTable';
 import CurrencyConverter from '../components/currencyCoverter/CurrencyConverter';
+import AssetsChart from '../components/assetsChart/AssetsChart';
 
 const Home = () => {
 
@@ -50,7 +51,7 @@ const Home = () => {
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                   <Box sx={{ backgroundColor: colors.elementBg, borderRadius: '12px', padding: '20px', height: '100%' }}>
-                    PIE CHART
+                    <AssetsChart/>
                   </Box>
                 </Grid>
                 <Grid item xs={12} sm={6}>

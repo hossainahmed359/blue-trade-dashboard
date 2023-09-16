@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, IconButton, Typography } from '@mui/material';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import { useColors } from '../../contexts/theme';
+import { useColors } from '../contexts/theme';
 
 const SectionHeader = ({title}) => {
 
