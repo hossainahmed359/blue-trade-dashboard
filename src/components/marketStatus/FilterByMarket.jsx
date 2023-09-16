@@ -52,7 +52,7 @@ const CustomDropDown = ({ show, handleSelect, optionsData = [] }) => {
         borderRadius: '5px',
         width: '300px',
         height: 'max-content',
-        ...(mode !== DARK_THEME && { boxShadow: 'rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px' })
+        ...(mode !== DARK_THEME && { boxShadow: 'rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;' })
       }}>
       {optionsData.map((item, index) =>
       
