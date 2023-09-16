@@ -22,12 +22,11 @@ const CurrencyConverter = () => {
       </Grid>
       <Grid item sm={12}>
         <Typography
-          variant="p"
           sx={{
             color: colors.grey[500],
             fontWeight: '600',
             fontSize: '9px',
-            lineHeight: '7px'
+            lineHeight: '16px'
           }}>
           The ultimate price and output is determined by the amount of tokens in the pool at the time of your swap.
         </Typography>
