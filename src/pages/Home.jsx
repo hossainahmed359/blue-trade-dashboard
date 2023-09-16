@@ -7,6 +7,7 @@ import MarketsTable from '../components/table/marktesTable/MarketsTable';
 import HistoryTable from '../components/table/historyTable/HistoryTable';
 import CurrencyConverter from '../components/currencyCoverter/CurrencyConverter';
 import AssetsChart from '../components/assetsChart/AssetsChart';
+import MarktetStatus from '../components/marketStatus/MarktetStatus';
 
 const Home = () => {
 
@@ -33,7 +34,7 @@ const Home = () => {
           <Grid container spacing={2}>
             <Grid item xs={12} sm={8}>
               <Box sx={{ backgroundColor: colors.elementBg, borderRadius: '12px', padding: '20px', height: '100%' }}>
-                BOX PLOT CHART
+               <MarktetStatus/>
               </Box>
             </Grid>
             <Grid item xs={12} sm={4}>

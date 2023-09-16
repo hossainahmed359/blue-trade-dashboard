@@ -9,6 +9,7 @@
     "@mui/material": "^5.14.8",
     "@mui/x-charts": "^6.0.0-alpha.11",
     "@mui/x-data-grid": "^6.13.0",
+    "@nivo/boxplot": "^0.83.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
