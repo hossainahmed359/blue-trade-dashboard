@@ -51,12 +51,12 @@ const Home = () => {
           <Grid container spacing={2}>
             <Grid item xs={12} lg={7}>
               <Grid container spacing={2}>
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} sm={6}>
                   <CustomCard>
                     <AssetsChart />
                   </CustomCard>
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} sm={6}>
                   <CustomCard >
                     <CurrencyConverter />
                   </CustomCard>
