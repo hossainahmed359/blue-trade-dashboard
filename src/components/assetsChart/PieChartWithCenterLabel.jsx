@@ -21,7 +21,7 @@ export default function PieChartWithCenterLabel() {
       <PieChart
         series={[{
           data,
-          innerRadius: 50,
+          innerRadius: 55,
           cx: 145,
           cy: 80
         }]}
