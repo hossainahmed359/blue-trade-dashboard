@@ -5,6 +5,7 @@ import StatBox from '../components/statsBox/StatBox';
 import { statBoxMeta } from '../configs/meta/statBoxMeta';
 import MarketsTable from '../components/table/marktesTable/MarketsTable';
 import HistoryTable from '../components/table/historyTable/HistoryTable';
+import CurrencyConverter from '../components/currencyCoverter/CurrencyConverter';
 
 const Home = () => {
 
@@ -52,7 +53,7 @@ const Home = () => {
             </Grid>
             <Grid item xs={12} sm={4}>
               <Box sx={{ backgroundColor: colors.elementBg, borderRadius: '12px', padding: '20px', height: '100%' }}>
-                CONVERTER
+                <CurrencyConverter/>
               </Box>
             </Grid>
             <Grid item xs={12} sm={5}>
