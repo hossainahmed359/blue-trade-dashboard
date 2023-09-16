@@ -21,7 +21,7 @@ const CurrencyConverter = () => {
         <Typography
           sx={{
             color: colors.grey[500],
-            fontWeight: '600',
+            fontWeight: 500,
             fontSize: '9px',
             lineHeight: '16px'
           }}>
