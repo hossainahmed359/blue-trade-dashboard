@@ -51,6 +51,17 @@ export const colorPaletteDark = {
         800: "#fdfdfd",
         900: "#fefefe",
     },
+    lightBlack: {
+        100: "#f9f9f9d7",
+        200: "#efefefaf",
+        300: "#dddedd88",
+        400: "#b7b9b760",
+        500: "#262c2638",
+        600: "#0d0f0d60",
+        700: "#06070688",
+        800: "#030303af",
+        900: "#010101d7"
+    },
     indigo: {
         100: "#141619",
         200: "#272c32",
@@ -188,6 +199,17 @@ export const colorPaletteLight = {
         800: "#646464",
         900: "#323232"
     },
+    lightBlack: {
+        100: "#010101d7",
+        200: "#030303af",
+        300: "#06070688",
+        400: "#0d0f0d60",
+        500: "#262c2638",
+        600: "#b7b9b760",
+        700: "#dddedd88",
+        800: "#efefefaf",
+        900: "#f9f9f9d7",
+    },
     indigo: {
         100: "#e0e2e5",
         200: "#c0c5cb",
@@ -303,5 +325,6 @@ export const colorPaletteLight = {
     elementBg: '#ffffff',
     textColor:'#1c1c25',
 }
+
 
 

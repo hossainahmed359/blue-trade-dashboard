@@ -1,0 +1,1 @@
+export const currencyTimeRange = ['1H', '3H', '5H', '1D', '1W', '1M']

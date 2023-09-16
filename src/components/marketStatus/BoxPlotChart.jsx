@@ -4,7 +4,7 @@ import { useColorMode, useColors } from '../../contexts/theme'
 import { DARK_THEME } from '../../configs/meta/colorPalette';
 import { marketStatusChartData } from '../../configs/meta/marketStatusChartMeta';
 
-const MyResponsiveBoxPlot = ({ data, isDashboard = false }) => {
+const MyResponsiveBoxPlot = () => {
 
   const { colors } = useColors();
   const { mode } = useColorMode();
@@ -59,16 +59,11 @@ const MyResponsiveBoxPlot = ({ data, isDashboard = false }) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legendPosition: 'middle',
-        legendOffset: 32
       }}
       axisLeft={{
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: 'value',
-        legendPosition: 'middle',
-        legendOffset: -40
       }}
       borderColor="none"
       colors={[colors.blueAccent[700], colors.blueAccent[500]]}

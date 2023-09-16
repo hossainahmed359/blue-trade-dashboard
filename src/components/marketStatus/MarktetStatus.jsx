@@ -1,17 +1,24 @@
 import { Box, Grid } from '@mui/material'
 import React from 'react'
 import MyResponsiveBoxPlot from './BoxPlotChart'
+import MarketStatusHeader from './MarketStatusHeader'
 
 const MarktetStatus = () => {
+
   return (
     <Grid container gap={3}>
       <Grid item sm={12}>
-        <Box>
-          Header Section
-        </Box>
+        <MarketStatusHeader />
       </Grid>
       <Grid item sm={12}>
-        <Box sx={{ width: 'auto', height: '300px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <Box
+          sx={{
+            width: 'auto',
+            height: '300px',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}>
           <MyResponsiveBoxPlot />
         </Box>
       </Grid>
