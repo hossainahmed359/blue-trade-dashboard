@@ -7,17 +7,17 @@ const MarktetStatus = () => {
 
   return (
     <Grid container gap={3}>
-      <Grid item sm={12}>
+      <Grid item xs={12}>
         <MarketStatusHeader />
       </Grid>
-      <Grid item sm={12}>
+      <Grid item xs={12}>
         <Box
           sx={{
             width: '100%',
             height: '300px',
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'center'
+            alignItems: 'center',
           }}>
           <MyResponsiveBoxPlot />
         </Box>

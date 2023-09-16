@@ -21,7 +21,7 @@ const SelectedMarktetLabel = ({ activeMarket, onClick }) => {
                 background: mode === DARK_THEME ? colors.grey[900] : colors.greyLight[500],
                 padding: '10px 20px',
                 borderRadius: '12px',
-                width: '300px',
+                // width: '300px',
                 height: '100%',
                 paddingRight: '50px',
                 position: 'relative',
