@@ -17,8 +17,10 @@ const Topbar = () => {
       backgroundColor: colors.elementBg,
       display: 'flex',
       justifyContent: 'space-between',
-      padding: '2'
-    }} >
+      padding: '18px'
+      
+    }} 
+    >
       {/* SEARCH */}
       <Box
         className=''
