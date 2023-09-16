@@ -78,7 +78,9 @@ const StatBox = ({ IconElement, chosenColors, isMainBalance, title, subtitle, ba
         sx={{
           display: 'flex',
           justifyContent: 'space-between',
-          alignItems: 'center'
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '10px'
         }}
       >
         <Typography variant="p" sx={{ color: colors.grey[500], fontWeight: 500 }}>

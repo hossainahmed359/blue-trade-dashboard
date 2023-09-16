@@ -8,6 +8,7 @@ import HistoryTable from '../components/table/historyTable/HistoryTable';
 import CurrencyConverter from '../components/currencyCoverter/CurrencyConverter';
 import AssetsChart from '../components/assetsChart/AssetsChart';
 import MarktetStatus from '../components/marketStatus/MarktetStatus';
+import CustomCard from '../components/CustomCard';
 
 const Home = () => {
 
@@ -21,54 +22,54 @@ const Home = () => {
           <Grid container spacing={2}>
             {statBoxMeta(colors).map((item, index) =>
               <Grid key={`statsbox-${index + 1}`} item xs={12} sm={6} lg={3}>
-                <Box sx={{ backgroundColor: colors.elementBg, borderRadius: '12px', padding: '20px' }}>
+                <CustomCard>
                   <StatBox {...item} />
-                </Box>
+                </CustomCard>
               </Grid>)}
           </Grid>
         </Grid>
 
 
         {/* MIDDLE SECTION */}
-        <Grid item xs={12}>
+        {/* <Grid item xs={12}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={8}>
-              <Box sx={{ backgroundColor: colors.elementBg, borderRadius: '12px', padding: '20px', height: '100%' }}>
-               <MarktetStatus/>
-              </Box>
+              <CustomCard >
+                <MarktetStatus />
+              </CustomCard>
             </Grid>
             <Grid item xs={12} sm={4}>
-              <Box sx={{ backgroundColor: colors.elementBg, borderRadius: '12px', padding: '20px', height: '100%' }}>
+              <CustomCard>
                 <MarketsTable />
-              </Box>
+              </CustomCard>
             </Grid>
           </Grid>
-        </Grid>
+        </Grid> */}
 
         {/* BOTTOM SECTION */}
-        <Grid item xs={12}>
+        {/* <Grid item xs={12}>
           <Grid container spacing={2}>
             <Grid item xs={10} sm={7}>
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
-                  <Box sx={{ backgroundColor: colors.elementBg, borderRadius: '12px', padding: '20px', height: '100%' }}>
-                    <AssetsChart/>
-                  </Box>
+                  <CustomCard>
+                    <AssetsChart />
+                  </CustomCard>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <Box sx={{ backgroundColor: colors.elementBg, borderRadius: '12px', padding: '20px', height: '100%' }}>
+                  <CustomCard >
                     <CurrencyConverter />
-                  </Box>
+                  </CustomCard>
                 </Grid>
               </Grid>
             </Grid>
             <Grid item xs={12} sm={5}>
-              <Box sx={{ backgroundColor: colors.elementBg, borderRadius: '12px', padding: '20px', height: '100%' }}>
+              <CustomCard >
                 <HistoryTable />
-              </Box>
+              </CustomCard>
             </Grid>
           </Grid>
-        </Grid>
+        </Grid> */}
       </Grid>
     </Box>
 
