@@ -8,6 +8,15 @@ function createData(
     return { market, currency, price, percentage };
 }
 
+export const marketList = [
+    createData('BTCUSDT', 'Bitcoin', '$23,495', +23.4),
+    createData('AXSUSDT', 'Axie Infinity', '$15.9', -7.8),
+    createData('ETHUSDT', 'Ethereum', '$15,978', -0.3),
+    createData('SOLUSDT', 'Solana', '$495', +11.1),
+    createData('BNBUSDT', 'Binance', '$267 ', +6.7),
+    createData('ADAUSDT', 'Cardano', '$0.49', -1.4),
+]
+
 export const marketTableRows = {
     'All': [
         createData('BTCUSDT', 'Bitcoin', '$23,495', +23.4),

@@ -71,14 +71,14 @@ const MyResponsiveBoxPlot = () => {
       whiskerWidth={1}
       whiskerEndSize={0.05}
       inactiveOpacity={0.7}
-      motionConfig={{
-        mass: 1,
-        tension: 186,
-        friction: 39,
-        clamp: false,
-        precision: 0.01,
-        velocity: 0
-      }}
+      // motionConfig={{
+      //   mass: 1,
+      //   tension: 186,
+      //   friction: 39,
+      //   clamp: false,
+      //   precision: 0.01,
+      //   velocity: 0
+      // }}
     />
   )
 
