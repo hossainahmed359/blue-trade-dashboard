@@ -1,9 +1,12 @@
-import { Box, Grid } from '@mui/material'
-import React from 'react'
+import React from 'react';
+import { Box, Grid, useMediaQuery, useTheme } from '@mui/material'
 import MyResponsiveBoxPlot from './BoxPlotChart'
 import MarketStatusHeader from './MarketStatusHeader'
 
 const MarktetStatus = () => {
+
+  const theme = useTheme();
+  const matchesDownMd = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
     <Grid container gap={3}>
@@ -14,7 +17,7 @@ const MarktetStatus = () => {
         <Box
           sx={{
             width: '100%',
-            height: '300px',
+            height: matchesDownMd ? '250px' : '300px',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',

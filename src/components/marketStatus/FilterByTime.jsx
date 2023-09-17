@@ -1,4 +1,4 @@
-import { Box } from '@mui/material'
+import { Box, useMediaQuery, useTheme } from '@mui/material'
 import React, { useState } from 'react'
 import { CategoryBtn } from '../button/CategoryBtn'
 import { currencyTimeRange } from '../../configs/meta/currencyTimeRange'
@@ -9,12 +9,22 @@ const FilterByTime = () => {
 
   const { colors } = useColors();
   const { mode } = useColorMode();
-
+  const theme = useTheme();
+  const matchesDownMd = useMediaQuery(theme.breakpoints.down('md'));
 
   const [activeRange, setActiveRange] = useState('1H');
 
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '10px' , flexWrap: 'wrap'}}>
+    <Box sx={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'flex-end',
+      gap: '10px',
+      flexWrap: 'wrap',
+      ...(matchesDownMd && {
+        justifyContent: 'flex-start',
+      })
+    }}>
       {currencyTimeRange.map((item, index) =>
         <CategoryBtn
           key={`category-${index + 1}`}
