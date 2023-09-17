@@ -6,7 +6,7 @@ import { Box } from '@mui/material'
 const Dashboard = ({ children }) => {
   return (
     <div className='app'>
-      <SideNav />
+      {/* <SideNav /> */}
       <main className="content">
         <Topbar />
         <Box sx={{margin: '2rem'}}>
