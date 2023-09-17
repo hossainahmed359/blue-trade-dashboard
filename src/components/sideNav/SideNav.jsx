@@ -10,15 +10,14 @@ import { sideNavBottomMeta, sideNavMeta } from '../../configs/meta/sideNavMeta';
 import SideBarToggler from './SideBarToggler';
 import Item from './Item';
 
-const SideNav = () => {
+const SideNav = ({sidebarCollapesed, setSidebarCollapsed}) => {
 
   const { colors } = useColors();
-  const [sidebarCollapesed, setSidebarCollapsed] = useState(false);
 
   return (
     <Box
       sx={{
-        position: "sticky",
+        position: "fixed",
         display: "flex",
         height: "100vh",
         top: 0,
