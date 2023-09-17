@@ -99,7 +99,7 @@ const SideNav = ({ sidebarCollapesed, setSidebarCollapsed, collapsedWidth = "4.5
           {!sidebarCollapesed
             &&
             <Box
-              backgroundColor={colors.grey[800]}
+              backgroundColor={mode === DARK_THEME ? colors.grey[800] : colors.grey[900] }
               opacity={0.5}
               margin={'5vh auto'}
               width={'140px'}
