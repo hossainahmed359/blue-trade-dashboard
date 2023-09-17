@@ -36,7 +36,7 @@ const MarketsCategorySection = ({ category, setCategory }) => {
         Markets
       </Typography>
       <Box sx={{
-        flex: 1, display: 'flex', alignItems: 'center', justifyContent: matchesDownLg ? 'flex-start' : 'flex-end', gap: '5px',
+        flex: 1, display: 'flex', alignItems: 'center', justifyContent: matchesDownMd ? 'flex-start' : 'flex-end', gap: '5px',
         ...(matchesDownLg && {
           flexWrap: 'wrap'
         })
