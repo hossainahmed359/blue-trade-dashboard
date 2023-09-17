@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import SideNav from '../sideNav/SideNav'
 import Topbar from '../topBar/Topbar'
 import { Box, useMediaQuery } from '@mui/material'
