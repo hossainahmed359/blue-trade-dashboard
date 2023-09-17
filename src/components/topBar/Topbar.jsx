@@ -3,11 +3,8 @@ import { Box, IconButton, useMediaQuery } from '@mui/material'
 import { useColorMode, useColors } from '../../contexts/theme';
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
-
-
 import SearchIcon from "@mui/icons-material/Search";
 import { DARK_THEME } from '../../configs/meta/colorPalette';
-import { useSceenWidth } from '../../contexts/screenWidth';
 import { BellIcon } from '../../assets/images/icons/icons';
 import SearchAndMenu from './SearchAndMenu';
 import NavProfile from './NavProfile';
