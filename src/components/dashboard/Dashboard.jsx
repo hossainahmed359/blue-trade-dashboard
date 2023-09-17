@@ -1,6 +1,6 @@
 import React from 'react'
 import SideNav from '../sideNav/SideNav'
-import Topbar from '../Topbar'
+import Topbar from '../topBar/Topbar'
 import { Box } from '@mui/material'
 
 const Dashboard = ({ children }) => {

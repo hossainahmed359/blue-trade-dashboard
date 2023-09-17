@@ -1,14 +1,12 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
-
-const breakpoints = {
+ 
+export const breakpoints = {
   XS: 0,
   SM: 600,
   MD: 960,
   LG: 1280,
   XL: 1920,
 };
-
-
 
 const ScreenWidthContext = createContext();
 
