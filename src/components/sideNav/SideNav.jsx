@@ -16,7 +16,7 @@ const SideNav = ({ sidebarCollapesed, setSidebarCollapsed, collapsedWidth = "4.5
 
   const { colors } = useColors();
   const theme = useTheme();
-  const {mode} = useColorMode();
+  const { mode } = useColorMode();
   const matchesDownLg = useMediaQuery(theme.breakpoints.down('lg'));
 
   return (
@@ -28,7 +28,7 @@ const SideNav = ({ sidebarCollapesed, setSidebarCollapsed, collapsedWidth = "4.5
         top: 0,
         bottom: 0,
         zIndex: 10000,
-        ...(matchesDownLg &&  {
+        ...(matchesDownLg && {
           boxShadow: mode === DARK_THEME ? '0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 4px 6px -2px rgba(255, 255, 255, 0.05)' : 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;'
         })
       }}
@@ -47,11 +47,16 @@ const SideNav = ({ sidebarCollapesed, setSidebarCollapsed, collapsedWidth = "4.5
             button: ({ active }) => {
               return {
                 borderRadius: '8px',
-                backgroundColor: active ? colors.blueAccent[800] : 'none',
-                color: active ? colors.blueAccent[500] : colors.textColor,
+                backgroundColor: 'none',
+                color: colors.textColor,
+
+                ...(active && {
+                  backgroundColor: mode === DARK_THEME ? colors.blueAccent[800] : colors.blueAccent[900],
+                  color: colors.blueAccent[500],
+                }),
 
                 [`&:hover`]: {
-                  backgroundColor: colors.blueAccent[800],
+                  backgroundColor: mode === DARK_THEME ? colors.blueAccent[800] : colors.blueAccent[900] ,
                   color: colors.blueAccent[500],
                 },
 
