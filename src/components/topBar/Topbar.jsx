@@ -12,7 +12,7 @@ import { useTheme } from '@emotion/react';
 
 
 
-const Topbar = () => {
+const Topbar = ({setSidebarCollapsed}) => {
   const { colors } = useColors();
   const { mode, colorMode } = useColorMode();
   const theme = useTheme();
@@ -29,7 +29,7 @@ const Topbar = () => {
       }}
     >
       {/* SEARCH AND MENU*/}
-      <SearchAndMenu />
+      <SearchAndMenu setSidebarCollapsed={setSidebarCollapsed}/>
 
       {/* ICONS */}
       <Box sx={{display: 'flex', alignItems: 'center', gap: '5px', justifyContent: 'flex-end'}}>

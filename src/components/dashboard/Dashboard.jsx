@@ -1,28 +1,33 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import SideNav from '../sideNav/SideNav'
 import Topbar from '../topBar/Topbar'
-import { Box } from '@mui/material'
+import { Box, useMediaQuery } from '@mui/material'
+import { useTheme } from '@emotion/react'
 
 
 const Dashboard = ({ children }) => {
 
-  const [sidebarCollapesed, setSidebarCollapsed] = useState(false);
+  const theme = useTheme();
+  const matchesUpLg = useMediaQuery(theme.breakpoints.up('lg'));
+  const [sidebarCollapesed, setSidebarCollapsed] = useState(!matchesUpLg);
 
   return (
     <div className='app'>
-
       <SideNav
         sidebarCollapesed={sidebarCollapesed}
         setSidebarCollapsed={setSidebarCollapsed}
-
+        collapsedWidth={matchesUpLg ? '4.5rem' : '0'}
       />
       <main className="content"
         style={{
-          transition: 'all 0.2s ease-out',
-          marginLeft: !sidebarCollapesed ? '250px' : '80px'
+          transition: 'all 0.2s linear',
+          ...(matchesUpLg && {
+            marginLeft: !sidebarCollapesed ? '250px' : '4.5rem'
+          })
+
         }}>
-        <Topbar />
-        <Box sx={{ margin: '2rem' }}>
+        <Topbar setSidebarCollapsed={setSidebarCollapsed}/>
+        <Box onClick={() => !matchesUpLg && setSidebarCollapsed(true)} sx={{ margin: '2rem' }}>
           {children}
         </Box>
       </main>

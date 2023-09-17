@@ -1,6 +1,6 @@
-import { Box } from '@mui/material';
+import { Box, useMediaQuery } from '@mui/material';
 import React, { useState } from 'react';
-import { useColors } from '../../contexts/theme';
+import { useColorMode, useColors } from '../../contexts/theme';
 import {
   Sidebar,
   Menu
@@ -9,10 +9,15 @@ import Logo from './Logo';
 import { sideNavBottomMeta, sideNavMeta } from '../../configs/meta/sideNavMeta';
 import SideBarToggler from './SideBarToggler';
 import Item from './Item';
+import { useTheme } from '@emotion/react';
+import { DARK_THEME } from '../../configs/meta/colorPalette';
 
-const SideNav = ({sidebarCollapesed, setSidebarCollapsed}) => {
+const SideNav = ({ sidebarCollapesed, setSidebarCollapsed, collapsedWidth = "4.5rem" }) => {
 
   const { colors } = useColors();
+  const theme = useTheme();
+  const {mode} = useColorMode();
+  const matchesDownLg = useMediaQuery(theme.breakpoints.down('lg'));
 
   return (
     <Box
@@ -23,14 +28,20 @@ const SideNav = ({sidebarCollapesed, setSidebarCollapsed}) => {
         top: 0,
         bottom: 0,
         zIndex: 10000,
-        border: 'none !important',
+        ...(matchesDownLg &&  {
+          boxShadow: mode === DARK_THEME ? '0 10px 15px -3px rgba(255, 255, 255, 0.1), 0 4px 6px -2px rgba(255, 255, 255, 0.05)' : 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;'
+        })
       }}
     >
       <Sidebar
+        collapsedWidth={collapsedWidth}
         rootStyles={{
-          border: 'none'
+          border: 'none',
+
         }}
-        backgroundColor={colors.elementBg} collapsed={sidebarCollapesed}>
+        backgroundColor={colors.elementBg}
+        collapsed={sidebarCollapesed}
+      >
         <Menu
           menuItemStyles={{
             button: ({ active }) => {
@@ -44,18 +55,19 @@ const SideNav = ({sidebarCollapesed, setSidebarCollapsed}) => {
                   color: colors.blueAccent[500],
                 },
 
-                margin: sidebarCollapesed ? '2vh auto' : '2vh 1vw',
+                margin: '2vh auto',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
+                maxWidth: '200px'
               }
             },
 
             icon: {
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              margin: 'auto',
+              // display: 'flex',
+              // justifyContent: 'center',
+              // alignItems: 'center',
+              // margin: 'auto',
               marginRight: sidebarCollapesed ? 'auto' : '4px'
             }
           }}>
@@ -101,13 +113,12 @@ const SideNav = ({sidebarCollapesed, setSidebarCollapsed}) => {
             )}
           </Box>
 
-          {/* SIDEBAR COLLAPSE */}
-          <SideBarToggler
-            colors={colors}
-            sidebarCollapesed={sidebarCollapesed}
-            setSidebarCollapsed={setSidebarCollapsed}
-          />
         </Menu>
+
+        {/* SIDEBAR COLLAPSE */}
+        <SideBarToggler
+          setSidebarCollapsed={setSidebarCollapsed}
+        />
       </Sidebar>
     </Box>
   )

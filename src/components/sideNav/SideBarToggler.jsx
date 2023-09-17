@@ -1,8 +1,12 @@
 import React from 'react';
 import MenuOpenIcon from '@mui/icons-material/MenuOpen';
 import { Box } from '@mui/material';
+import { useColors } from '../../contexts/theme';
 
-const SideBarToggler = ({ colors, setSidebarCollapsed }) => {
+const SideBarToggler = ({ setSidebarCollapsed }) => {
+
+  const { colors } = useColors();
+
   return (
     <Box
       sx={{
@@ -14,7 +18,9 @@ const SideBarToggler = ({ colors, setSidebarCollapsed }) => {
         justifyContent: 'center',
         alignItems: 'center',
         cursor: 'pointer',
+        color: colors.blueAccent[500],
         borderTop: `1px solid ${colors.grey[800]}`,
+        backgroundColor: colors.elementBg,
         padding: '15px'
       }}
 

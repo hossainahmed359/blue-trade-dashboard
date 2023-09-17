@@ -1,13 +1,12 @@
 import React from 'react';
 import { Box, IconButton, InputBase, useMediaQuery } from '@mui/material'
 import { useColorMode, useColors } from '../../contexts/theme';
-import { useSceenWidth } from '../../contexts/screenWidth';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from "@mui/icons-material/Search";
 import { DARK_THEME } from '../../configs/meta/colorPalette';
 import { useTheme } from '@emotion/react';
 
-const SearchAndMenu = () => {
+const SearchAndMenu = ({setSidebarCollapsed}) => {
   const { colors } = useColors();
   const { mode } = useColorMode();
   const theme = useTheme();
@@ -22,15 +21,9 @@ const SearchAndMenu = () => {
     }}>
       {/* MENU OPEN ICON */}
       {matchesDownLg ?
-        <Box
-          sx={{
-            display: 'flex',
-            justifyItems: 'center',
-            alignItems: 'center',
-          }}
-        >
+        <IconButton onClick={() => setSidebarCollapsed(false)}>
           <MenuIcon />
-        </Box> :
+        </IconButton> :
         <Box
           sx={{
             display: 'flex',
