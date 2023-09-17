@@ -1,21 +1,16 @@
 import { CssBaseline } from "@mui/material";
 import Providers from "./contexts/Providers";
-import Dashboard from "./components/dashboard/Dashboard";
-import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
+import {  useRoutes } from "react-router-dom";
+import routesMeta from "./configs/meta/routesMeta";
 
 function App() {
+
+  const content = useRoutes(routesMeta);
 
   return (
     <Providers>
       <CssBaseline />
-        <Dashboard>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="*" element={<>This is is not available</>} />
-          </Routes>
-        </Dashboard>
-
+      {content}
     </Providers>
   );
 }
