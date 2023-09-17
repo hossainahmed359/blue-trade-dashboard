@@ -1,5 +1,5 @@
 import { Box, useMediaQuery } from '@mui/material';
-import React, { useState } from 'react';
+import React from 'react';
 import { useColorMode, useColors } from '../../contexts/theme';
 import {
   Sidebar,
