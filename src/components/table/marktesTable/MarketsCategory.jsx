@@ -10,7 +10,7 @@ const MarketsCategorySection = ({ category, setCategory }) => {
   const { colors } = useColors();
   const theme = useTheme();
   const matchesDownLg = useMediaQuery(theme.breakpoints.down('lg'));
-  const matchesDownMd = useMediaQuery(theme.breakpoints.down('md'));
+  const matchesDownMd = useMediaQuery(theme.breakpoints.down('sm'));
 
 
   return (
@@ -21,14 +21,12 @@ const MarketsCategorySection = ({ category, setCategory }) => {
         alignItems: 'center',
         gap: '10px',
         marginRight: '20px',
-        ...(matchesDownLg && {
-          flexWrap: 'wrap',
-        }),
         ...(matchesDownMd && {
           flexDirection: 'column',
           justifyContent: 'flex-start',
           alignItems: 'flex-start',
           gap: '15px',
+          flexWrap: 'wrap',
         }),
 
       }}>
